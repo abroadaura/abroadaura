@@ -5,7 +5,7 @@ const App = () => {
     <div>
       <div className='flex items-center justify-center flex-col'>
         <img className='w-80' src="/logo.png" alt="" />
-        <h1 className='text-6xl font-medium p-5 text-blue-600 border rounded-xl hover:bg-blue-600 hover:text-white'>Abroad Aura</h1>
+        <h1 className='text-4xl md:text-6xl font-medium p-3 md:p-5 text-blue-600 border rounded-xl hover:bg-blue-600 hover:text-white cursor-pointer transition-all duration-500'>Abroad Aura</h1>
       </div>
     </div>
   )
