@@ -5,7 +5,7 @@ import { db } from "../firebase/config";
 import { ref, push } from "firebase/database";
 
 
-const Contact = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -310,4 +310,4 @@ const handleSubmit = async (e) => {
   );
 };
 
-export default Contact;
+export default ContactPage;

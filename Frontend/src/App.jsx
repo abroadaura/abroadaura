@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import ChatWidget from "./components/chat/ChatWidget";
 import Footer from "./components/Home/Footer";
-import Contact from "./pages/contact";
+import ContactPage from "./pages/ContactPage";
 import Login from "./pages/Login";
 import { AuthProvider } from "./context/AuthContext";
 import AdminPanel from "./pages/AdminPanel";
@@ -24,7 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/Consultation-form" element={<ConsultationForm />} />
 
           <Route path="/login" element={<Login />} />
