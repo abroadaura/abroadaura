@@ -27,7 +27,7 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_API_AUTH_DOMAIN,
-  databaseURL: "https://abroad-aura-official-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  databaseURL: import.meta.env.VITE_API_DATABASE_URL,
   projectId: import.meta.env.VITE_API_PROJECT_ID,
   storageBucket: import.meta.env.VITE_API_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_API_MESSAGING_SENDER_ID,
