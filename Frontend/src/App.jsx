@@ -14,6 +14,7 @@ import AdminRoute from "./components/Admin/AdminRoute";
 import ConsultationForm from "./components/Home/ConsultationForm";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactAdminPanel from "./components/Admin/ContactAdminPanel";
+import AdminVisitors from "./components/Admin/AdminVisitors";
 
 const App = () => {
   return (
@@ -30,7 +31,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/pannel/admin-login" element={<AdminLogin />} />
           <Route path="/pannel/admin" element={<AdminRoute><AdminPanel /></AdminRoute>} />
-          <Route path="/pannel/admin-contact" element={<AdminRoute><ContactAdminPanel /></AdminRoute>} />
+          <Route path="/pannel/admin/contact" element={<AdminRoute><ContactAdminPanel /></AdminRoute>} />
+          <Route path="/pannel/admin/visitors" element={<AdminRoute><AdminVisitors /></AdminRoute>} />
         </Routes>
         <Footer />
         <ChatWidget />
