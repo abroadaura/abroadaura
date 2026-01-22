@@ -166,7 +166,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
 
-          {/* Right Form Section */}
+          {/* Right Form Section message */}
           <div className="relative">
             {isSubmitted && (
               <div className="absolute inset-0 bg-linear-to-br from-green-50 to-emerald-50 rounded-3xl border border-emerald-200 flex items-center justify-center z-10 animate-in fade-in duration-500">
