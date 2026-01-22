@@ -4,19 +4,7 @@ import connectDB from "./config/db.js";
 import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
-// const app = express();
 
-// // Middleware
-// app.use(express.json());
-
-// // Connect to DB
-// connectDB();
-
-// // Routes
-// app.use("/api/admin", adminRoutes);
-
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 
 
 import path from "path";
