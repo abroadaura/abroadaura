@@ -158,7 +158,7 @@ function ChatWidget() {
   }, [isLoading]);
 
 const handleSendMessage = async (userMessage) => {
-  // 🚨 If user is NOT logged in → redirect to login
+  // 🚨 If user is NOT logged in → redirect to login page
   if (!user) {
     setIsOpen(false)
     navigate('/login', { state: { from: window.location.pathname } });
