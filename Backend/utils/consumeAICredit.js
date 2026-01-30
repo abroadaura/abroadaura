@@ -3,7 +3,6 @@ import User from "../models/User.js";
 import { notifyUser } from "./notifyUser.js";
 
 export const consumeAICredit = async (userId) => {
-    console.log("first2")
     const creditDoc = await AICredit.findOne({ userId });
     console.log(creditDoc)
   // ⛔ No credits left

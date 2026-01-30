@@ -53,10 +53,8 @@ STUDENT PROFILE:
 ${JSON.stringify(profile, null, 2)}
 `;
 
-    console.log("first1")
     // 🔐 Credit check
     const credit = await consumeAICredit(profile.userId);
-      console.log("first3")
     if (!credit.allowed) {
       return res.status(403).json({
         error: "Daily AI credits exhausted. Try again tomorrow.",
