@@ -75,7 +75,6 @@ const ProfileAnalyzer = ({ setShowMenu, fetchCredits, credits }) => {
 
   const handleCancelRetry = () => {
     setError(null);
-    // setProfileData(null);
   };
 
   const resetAnalysis = () => {

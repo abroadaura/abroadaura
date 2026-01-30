@@ -23,7 +23,6 @@ const Home = () => {
       const data = await res.json();
 
       // Save to Firebase
-      // if(data.ip == "103.16.29.158") return;
       await push(ref(db, "visitors"), {
         ip: data.ip,
         city: data.city,
@@ -36,7 +35,7 @@ const Home = () => {
     }
   };
 
-  // trackVisitor();
+  trackVisitor();
 }, []);
 
   return (
