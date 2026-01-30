@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -15,10 +15,12 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-3 mt-6 text-[#0441b4]">
             <a
-              href="#"
+              href="https://www.instagram.com/abroadaura_official?igsh=aDM1MzgxNHF1ZHlr"
               className="bg-white p-2 rounded-full hover:bg-[#0441b4] hover:text-white border border-white hover:-translate-y-1 transition"
             >
-              <Facebook className="w-5 h-5" />
+              {/* <Facebook className="w-5 h-5" /> */}
+                            {/* <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" className="w-5 h-5" alt="" /> */}
+            <Instagram className="w-5 h-5" />
             </a>
             <a
               href="#"
@@ -27,7 +29,7 @@ const Footer = () => {
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/abroad-aura/"
               className="bg-white p-2 rounded-full hover:bg-[#0441b4] border border-white hover:text-white hover:-translate-y-1 transition"
             >
               <Linkedin className="w-5 h-5" />
@@ -45,8 +47,8 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-gray-200 transition">
-                Features
+              <Link to={'/tools'} className="hover:text-gray-200 transition">
+                Tools
               </Link>
             </li>
             <li>

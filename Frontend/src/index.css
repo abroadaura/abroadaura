@@ -5,6 +5,12 @@
     font-family: "Poppins", sans-serif;
 }
 
+.sparkle {
+  fill: #7c3aed;
+  color: #7c3aed;
+  background: #000;
+}
+
 ::-webkit-scrollbar{
     @apply hidden
 }

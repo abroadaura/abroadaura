@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle, Clock, MessageCircle, Globe, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle,  MessageCircle, Globe, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase/config";
 import { ref, push } from "firebase/database";
@@ -56,7 +56,7 @@ const handleSubmit = async (e) => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email",
-      details: "support@abroadaura.com",
+      details: "abroadauracare@gmail.com",
       subtext: "Typically replies within 48 hours",
       color: "from-[#0441b4] to-[#0441b4]",
       bgColor: "bg-gray-50"
@@ -72,14 +72,14 @@ const handleSubmit = async (e) => {
   ];
 
   const socialLinks = [
-    { icon: <Instagram className="w-5 h-5" />, label: "Instagram", color: "hover:bg-gradient-to-br from-pink-500 to-purple-600" },
-    { icon: <Twitter className="w-5 h-5" />, label: "Twitter", color: "hover:bg-gradient-to-br from-sky-500 to-blue-600" },
-    { icon: <Linkedin className="w-5 h-5" />, label: "LinkedIn", color: "hover:bg-gradient-to-br from-blue-600 to-blue-700" },
-    { icon: <Facebook className="w-5 h-5" />, label: "Facebook", color: "hover:bg-gradient-to-br from-blue-500 to-blue-600" },
+    { icon: <Instagram className="w-5 h-5" />, ref:"https://www.instagram.com/abroadaura_official?igsh=aDM1MzgxNHF1ZHlr", label: "Instagram", color: "hover:bg-gradient-to-br from-pink-500 to-purple-600" },
+    { icon: <Twitter/>, ref:"#", label: "Twitter", color: "hover:bg-gradient-to-br from-sky-500 to-blue-600" },
+    { icon: <Linkedin className="w-5 h-5" />,ref:"https://www.linkedin.com/company/abroad-aura/", label: "LinkedIn", color: "hover:bg-gradient-to-br from-blue-600 to-blue-700" },
+    { icon: <Facebook className="w-5 h-5" />,ref:"#", label: "Facebook", color: "hover:bg-gradient-to-br from-blue-500 to-blue-600" },
   ];
 
   return (
-    <div className="min-h-screen bg-blue-50 py-12 px-4">
+    <div className="min-h-screen bg-blue-50 py-12 px-4 md:px-8">
       {/* Floating decorative elements */}
 
 
@@ -155,7 +155,7 @@ const handleSubmit = async (e) => {
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
-                    href="#"
+                    href={social.ref}
                     className={`flex items-center justify-center p-3 rounded-xl bg-gray-100 text-gray-700 hover:text-white ${social.color} transition-all duration-300 transform hover:-translate-y-1`}
                     aria-label={social.label}
                   >

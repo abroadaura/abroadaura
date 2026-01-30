@@ -15,18 +15,31 @@ import ConsultationForm from "./components/Home/ConsultationForm";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactAdminPanel from "./components/Admin/ContactAdminPanel";
 import AdminVisitors from "./components/Admin/AdminVisitors";
+import Tools from "./pages/Tools";
+import RadiatorAI from "./pages/RadiatorAI";
+import { NotificationProvider } from "./context/NotificationContext";
+import ComingSoon from "./components/ComingSoon";
+import ProtectedRoute from "./Authentication/ProtectedRoute";
 
 const App = () => {
   return (
     <div className="App bg-white min-h-screen text-black">
     <ScrollToTop/>
       <AuthProvider>
+      <NotificationProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/ai" element={<ProtectedRoute><RadiatorAI /></ProtectedRoute> } />
           <Route path="/Consultation-form" element={<ConsultationForm />} />
+
+          {/* tools  */}
+          <Route path="/tools" element={<Tools/>}/>
+          <Route path="/blog" element={<ComingSoon/>}/>
+          <Route path="/courses" element={<ComingSoon/>}/>
+          <Route path="/resources" element={<ComingSoon/>}/>
 
           <Route path="/login" element={<Login />} />
           <Route path="/pannel/admin-login" element={<AdminLogin />} />
@@ -36,6 +49,7 @@ const App = () => {
         </Routes>
         <Footer />
         <ChatWidget />
+       </NotificationProvider>
       </AuthProvider>
     </div>
   );

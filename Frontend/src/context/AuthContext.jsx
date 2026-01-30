@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(user)
       setLoading(false);
     });
 
@@ -21,10 +20,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ user }}>
-      {!loading ?
-       children :
-       <p className="flex justify-center items-center mt-20 gap-4"> <Loader size={20} className="animate-spin"/> Please wait</p>
-       }
+       {children}
     </AuthContext.Provider>
   );
 };

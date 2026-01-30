@@ -7,6 +7,14 @@ const Contact = () => {
   const navigate = useNavigate();
   return (
     <div>
+          <div className="text-center mt-12">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-black mb-3">
+          Feel Free to<span className="text-[#0441b4]"> Connect</span>
+        </h1>
+        <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+           if you need any help regarding Abroad aura programs cotact us.
+        </p>
+      </div>
         <div className='flex bg-[#0441b4] rounded-lg md:px-14 my-20 md:mt-30 md:mx-20 mx-6 '>
           {/* left */}
           <div className="w-full md:w-2/3 space-y-6 px-6 md:px-10 lg:px-15 py-12">
@@ -22,7 +30,7 @@ const Contact = () => {
             <div className="flex items-center gap-3">
               <Mail className="text-gray-50 w-5 h-5" />
               <p className="text-base">
-                Email: <span className="font-medium">abc@gmail.com</span>
+                Email: <span className="font-medium">abroadaurasupport@gmail.com</span>
               </p>
             </div>
             <div className="flex items-center gap-3">

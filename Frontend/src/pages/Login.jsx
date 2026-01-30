@@ -4,6 +4,7 @@ import { auth, googleAuth } from "../firebase/config";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Sparkles, BookOpen } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import axios from "axios"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,10 +12,25 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const {user} = useAuth()
 
+  const baseUrl = import.meta.env.VITE_BACKEND_URL;
+
+    if(user){
+    // Redirect back to original page
+     navigate(location.state?.from || "/");
+  }
+
   async function login() {
     setLoading(true);
     try {
       const result = await signInWithPopup(auth, googleAuth);
+
+      await axios.post(`${baseUrl}/api/users/create-or-get`, {
+        uid: result.user.uid,
+        name: result.user.displayName,
+        email: result.user.email,
+        photoURL: result.user.photoURL,
+      });
+
       setLoading(false);
       navigate(location.state?.from || "/");
     } catch (error) {
@@ -29,10 +45,10 @@ const Login = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-4">
+    <div className=" py-32 md:py-20 flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-4">
       
       {/* Container */}
-      <div className="w-full max-w-5xl bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-white/40 overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+      <div className="w-full max-w-5xl   bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-white/40 overflow-hidden grid grid-cols-1 lg:grid-cols-2">
 
         {/* Left Feature Side */}
         <div className="hidden lg:flex flex-col justify-between bg-[#0441b4] p-10 text-white relative">
@@ -65,7 +81,7 @@ const Login = () => {
         <div className="p-8 sm:p-12 flex flex-col justify-center">
 
           {/* Mobile header */}
-          <div className="lg:hidden text-center mb-8">
+          {/* <div className="hidden text-center mb-8">
             <div className="flex justify-center items-center gap-3 mb-3">
               <div className="bg-[#0441b4] p-3 rounded-xl">
                 <BookOpen className="text-white" />
@@ -73,12 +89,16 @@ const Login = () => {
               <h1 className="text-2xl font-bold">Abroad Aura</h1>
             </div>
             <p className="text-gray-500 text-sm">Your Smart Learning Companion</p>
+          </div> */}
+
+          <div className="md:hidden flex items-center justify-center">
+            <img src="./logo4.png" className="w-25" alt="" />
           </div>
 
           {/* Login box */}
           <div className="max-w-md mx-auto w-full ">
 
-            <h2 className="text-3xl font-bold text-center mb-2">Welcome Back</h2>
+            <h2 className="text-lg md:text-3xl font-bold text-center mb-2">Welcome Back</h2>
             <p className="text-gray-500 text-center mb-10 text-sm">
               Continue with Google to get started
             </p>

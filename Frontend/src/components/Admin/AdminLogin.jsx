@@ -9,6 +9,7 @@ const AdminLogin = () => {
     password: "",
   });
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -18,6 +19,7 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
 
     try {
       await signInWithEmailAndPassword(
@@ -32,8 +34,19 @@ const AdminLogin = () => {
       navigate("/pannel/admin");
     } catch (err) {
       setError("Invalid email or password");
+    } finally {
+      setIsLoading(false);
     }
   };
+
+  // Loading spinner component
+  const LoadingSpinner = () => (
+    <div className="flex items-center justify-center">
+      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+      <span>Logging in...</span>
+    </div>
+  );
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
@@ -57,7 +70,8 @@ const AdminLogin = () => {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full border rounded-lg px-4 py-2"
+            disabled={isLoading}
+            className="w-full border rounded-lg px-4 py-2 disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
         </div>
 
@@ -71,17 +85,49 @@ const AdminLogin = () => {
             required
             value={formData.password}
             onChange={handleChange}
-            className="w-full border rounded-lg px-4 py-2"
+            disabled={isLoading}
+            className="w-full border rounded-lg px-4 py-2 disabled:bg-gray-100 disabled:cursor-not-allowed"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium"
+          disabled={isLoading}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium disabled:bg-blue-400 disabled:cursor-not-allowed min-h-[44px]"
         >
-          Login
+          {isLoading ? (
+            // You can choose either animation style:
+            <LoadingSpinner />
+            // OR:
+          ) : (
+            "Login"
+          )}
         </button>
+        
+        {/* Optional: Progress bar animation */}
+        {isLoading && (
+          <div className="mt-4 w-full bg-gray-200 rounded-full h-1 overflow-hidden">
+            <div className="h-full bg-blue-600 rounded-full animate-progress"></div>
+          </div>
+        )}
       </form>
+      
+      {/* Add these styles for animations */}
+      <style jsx>{`
+        @keyframes progress {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-progress {
+          animation: progress 1.5s ease-in-out infinite;
+        }
+        .animation-delay-200 {
+          animation-delay: 0.2s;
+        }
+        .animation-delay-400 {
+          animation-delay: 0.4s;
+        }
+      `}</style>
     </div>
   );
 };
