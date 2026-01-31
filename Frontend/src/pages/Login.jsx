@@ -12,12 +12,12 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const {user} = useAuth()
 
+
   const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
-    if(user){
-    // Redirect back to original page
-     navigate(location.state?.from || "/");
-  }
+  //   if(user){
+  //    navigate(location.state?.from || "/");
+  // }
 
   async function login() {
     setLoading(true);
@@ -56,7 +56,7 @@ const Login = () => {
 
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6 rounded-full">
-              <img src="./logo4.png" className="w-12 h-12 rounded-xl" />
+              <img src="https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857410/logo4_ew3okh.png" className="w-12 h-12 rounded-xl" />
               <h1 className="text-2xl font-bold ">Abroad Aura</h1>
             </div>
 
@@ -92,7 +92,7 @@ const Login = () => {
           </div> */}
 
           <div className="md:hidden flex items-center justify-center">
-            <img src="./logo4.png" className="w-25" alt="" />
+            <img src="https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857410/logo4_ew3okh.png" className="w-25" alt="" />
           </div>
 
           {/* Login box */}
@@ -114,7 +114,7 @@ const Login = () => {
                 disabled:opacity-60
               "
             >
-              <img src="./google.png" className="w-5 h-5" />
+              <img src="https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857862/pngwing.com_d32aom.png" className="w-6 h-6" />
 
               {loading ? (
                 <span className="flex items-center gap-2 text-sm font-medium">

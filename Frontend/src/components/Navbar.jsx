@@ -20,6 +20,7 @@ const Navbar = () => {
   const notificationRef = useRef(null);
   const [showNotifications, setShowNotifications] = useState(false);
 
+
 const {
   notifications,
   unreadCount,
@@ -131,7 +132,7 @@ const {
               >
                 <img
                   className="w-10 md:w-12 transition-transform group-hover:scale-105 hidden sm:block"
-                  src={assets.logo4}
+                  src="https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857410/logo4_ew3okh.png"
                   alt="Abroad Aura Logo"
                 />
                 <div className="leading-tight">
@@ -232,7 +233,7 @@ const {
                 className="flex items-center justify-center gap-1 text-[#0441b4] hover:scale-102"
               >
                 <img
-                  src="./sparkles.png"
+                  src="https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857410/sparkles_i1azok.png"
                   className="w-[30px] md:w-[25px]  rounded-lg"
                   alt=""
                 />
@@ -432,7 +433,7 @@ const {
           {/* Mobile Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
             <div className="flex items-center gap-3">
-              <img className="w-10" src={assets.logo4} alt="Abroad Aura Logo" />
+              <img className="w-10" src='https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857410/logo4_ew3okh.png' alt="Abroad Aura Logo" />
               <div>
                 <p className="font-bold text-lg text-[#0441b4]">Abroad Aura</p>
                 <p className="text-xs text-gray-500">Beyond borders</p>
