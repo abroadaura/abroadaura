@@ -279,7 +279,7 @@ const {
 
                         {/* Notifications List */}
                         <div className="max-h-80 overflow-y-auto">
-                          {notifications.length === 0 ? (
+                          {notifications?.length === 0 ? (
                             <div className="p-4 text-center">
                               <div className="w-8 h-12 mx-auto mb-3 flex items-center justify-center bg-gray-100 rounded-full">
                                 <Bell size={24} className="text-gray-400" />
@@ -293,7 +293,7 @@ const {
                             </div>
                           ) : (
                             !loading &&
-                            notifications.map((n) => (
+                            notifications?.map((n) => (
                               <div
                                 key={n._id}
                                 className={`p-3 border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer `}
