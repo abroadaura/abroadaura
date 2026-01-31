@@ -20,12 +20,11 @@ import RadiatorAI from "./pages/RadiatorAI";
 import { NotificationProvider } from "./context/NotificationContext";
 import ComingSoon from "./components/ComingSoon";
 import ProtectedRoute from "./Authentication/ProtectedRoute";
-import UserGroup from "./UserGroup";
 
 const App = () => {
   return (
     <div className="App bg-white min-h-screen text-black">
-          <ScrollToTop/>
+      <ScrollToTop/>
       <AuthProvider>
       <NotificationProvider>
         <Navbar />

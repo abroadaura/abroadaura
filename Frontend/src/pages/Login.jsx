@@ -15,9 +15,9 @@ const Login = () => {
 
   const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
-  //   if(user){
-  //    navigate(location.state?.from || "/");
-  // }
+    if(user){
+     navigate(location.state?.from || "/");
+  }
 
   async function login() {
     setLoading(true);
@@ -81,15 +81,6 @@ const Login = () => {
         <div className="p-8 sm:p-12 flex flex-col justify-center">
 
           {/* Mobile header */}
-          {/* <div className="hidden text-center mb-8">
-            <div className="flex justify-center items-center gap-3 mb-3">
-              <div className="bg-[#0441b4] p-3 rounded-xl">
-                <BookOpen className="text-white" />
-              </div>
-              <h1 className="text-2xl font-bold">Abroad Aura</h1>
-            </div>
-            <p className="text-gray-500 text-sm">Your Smart Learning Companion</p>
-          </div> */}
 
           <div className="md:hidden flex items-center justify-center">
             <img src="https://res.cloudinary.com/dvrfowc4a/image/upload/v1769857410/logo4_ew3okh.png" className="w-25" alt="" />
